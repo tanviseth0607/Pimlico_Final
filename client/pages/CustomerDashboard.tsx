@@ -124,6 +124,8 @@ export default function CustomerDashboard() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [cartCount, setCartCount] = useState(3);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   const categories = [
     { id: "all", name: "All Products", icon: "📦" },
@@ -168,7 +170,10 @@ export default function CustomerDashboard() {
             </div>
 
             <div className="flex items-center gap-4">
-              <button className="relative p-2 hover:bg-slate-100 rounded-lg transition-colors">
+              <button
+                onClick={() => setIsCartOpen(true)}
+                className="relative p-2 hover:bg-slate-100 rounded-lg transition-colors"
+              >
                 <ShoppingCart className="w-6 h-6 text-secondary" />
                 {cartCount > 0 && (
                   <span className="absolute top-1 right-1 w-5 h-5 bg-accent text-white text-xs rounded-full flex items-center justify-center font-semibold">
@@ -186,7 +191,10 @@ export default function CustomerDashboard() {
                   <Menu className="w-6 h-6" />
                 )}
               </button>
-              <button className="hidden md:block p-2 hover:bg-slate-100 rounded-lg transition-colors">
+              <button
+                onClick={() => setIsSettingsOpen(true)}
+                className="hidden md:block p-2 hover:bg-slate-100 rounded-lg transition-colors"
+              >
                 <Settings className="w-6 h-6 text-secondary" />
               </button>
             </div>
