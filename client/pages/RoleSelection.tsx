@@ -300,8 +300,8 @@ export default function RoleSelection() {
                     selectedRole === "customer"
                       ? "/customer-dashboard"
                       : selectedRole === "retailer"
-                      ? "/retailer-dashboard"
-                      : "/wholesaler-dashboard"
+                        ? "/retailer-dashboard"
+                        : "/wholesaler-dashboard"
                   }
                   className="block w-full py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 text-center"
                 >
